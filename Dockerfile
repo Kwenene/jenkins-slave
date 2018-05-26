@@ -14,7 +14,9 @@ RUN yum update -y && \
 RUN yum install git
 
 # Add user jenkins to the image
-RUN adduser --quiet jenkins
+USER jenkins
+
+ENV USER jenkins
 # Set password for the jenkins user (you may want to alter this).
 RUN echo "jenkins:jenkins" | chpasswd
 
