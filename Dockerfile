@@ -11,7 +11,7 @@ RUN yum update -y && \
   yum clean all
 
 # Installing git
-yum install git
+RUN yum install git
 
 # Add user jenkins to the image
 RUN adduser --quiet jenkins
