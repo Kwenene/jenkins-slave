@@ -5,14 +5,14 @@ MAINTAINER Thembela Kwenene <thembela@kineticskunk.com>
 ENV JAVA_VERSON 1.8.0
 ENV MAVEN_VERSION 3.3.9
 
-# Installing git
-yum install git
-
 RUN yum update -y && \
   yum install -y curl && \
   yum install -y java-$JAVA_VERSON-openjdk java-$JAVA_VERSON-openjdk-devel && \
   yum clean all
- 
+
+# Installing git
+yum install git
+
 # Add user jenkins to the image
 RUN adduser --quiet jenkins
 # Set password for the jenkins user (you may want to alter this).
